@@ -71,7 +71,7 @@
     --accent:#d9b26a;
     --accent-2:#b98036;
     --radius:16px;
-    --maxw:1520px;
+    --maxw:1760px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:88px}
@@ -402,6 +402,77 @@
     .contact{padding:72px 60px}
     .contact p{font-size:17px;max-width:660px}
     .contact .email{font-size:26px}
+  }
+  @media(min-width:1380px){
+    html{scroll-padding-top:104px}
+    .wrap{padding-left:56px;padding-right:56px}
+    .nav-inner{height:82px}
+    .brand{font-size:24px}
+    .nav-links{gap:34px;font-size:15.5px}
+    .lang-toggle{font-size:14px;padding:7px 14px}
+    .banner-inner{
+      min-height:800px;padding:98px 56px 96px;
+      grid-template-columns:minmax(0,1fr) minmax(470px,520px);
+      gap:clamp(76px,6vw,104px)
+    }
+    .banner h1{font-size:clamp(94px,6.2vw,116px);margin:22px 0 20px}
+    .banner .role{max-width:900px;font-size:23px;line-height:1.55;margin-bottom:12px}
+    .banner .sub{font-size:18.5px;margin-bottom:30px}
+    .eyebrow{font-size:13px}
+    .chips{gap:12px;margin:26px 0 36px}
+    .chip{font-size:14.5px;padding:9px 17px}
+    .btn{font-size:16px;padding:15px 27px}
+    .photo-frame{width:min(520px,36vw);border-radius:24px}
+    .photo-frame .ring{border-radius:24px}
+    section{padding:116px 0}
+    .sec-head{max-width:1040px;margin-bottom:56px}
+    .sec-head h2{font-size:clamp(42px,3.5vw,58px);margin:16px 0 18px}
+    .sec-head p{font-size:19px;line-height:1.7}
+    .about-grid{grid-template-columns:minmax(0,1.55fr) minmax(380px,.65fr);gap:96px}
+    .about-grid p{font-size:19.5px;line-height:1.75;margin-bottom:21px}
+    .stat-card{padding:31px 34px;margin-bottom:19px}
+    .stat-card .n{font-size:42px}
+    .stat-card .l{font-size:15px}
+    .highlights-grid{gap:28px}
+    .highlight-card{min-height:490px;padding:44px}
+    .highlight-card::after{left:44px;right:44px}
+    .highlight-top{margin-bottom:62px}
+    .highlight-card h3{font-size:clamp(36px,2.8vw,46px);margin-bottom:21px}
+    .highlight-card .study-title{font-size:17px}
+    .highlight-card .summary{font-size:16px;line-height:1.72}
+    .highlight-meta strong{font-size:14px}
+    .scenes,.institutions,.cards,.repos{gap:26px}
+    .scene .art,.inst .inst-art{height:250px}
+    .scene .cap,.inst .inst-cap{padding:24px 28px 28px}
+    .scene .cap h3,.inst .inst-cap h3{font-size:19px}
+    .scene .cap p,.inst .inst-cap p{font-size:15px}
+    .band-photo{height:280px;margin-top:32px}
+    .card{padding:38px 36px}
+    .card h3{font-size:21px;margin:17px 0 12px}
+    .card p{font-size:16px;line-height:1.7}
+    .timeline{max-width:1280px}
+    .t-item{padding:0 0 42px 40px}
+    .t-item h3{font-size:21px}
+    .t-item .org{font-size:17px}
+    .t-item .desc{max-width:980px;font-size:16px;line-height:1.7}
+    .pub{padding:29px 32px;gap:28px;margin-bottom:16px}
+    .pub .yr{font-size:27px;min-width:80px}
+    .pub .body h3{font-size:19px}
+    .pub .body .meta,.pub .body .venue{font-size:15.5px}
+    .repo{padding:32px}
+    .repo h3{font-size:20px}
+    .repo p{font-size:15.5px;line-height:1.65}
+    .skill-grid{gap:22px}
+    .skill-col{padding:32px}
+    .skill-col h3{font-size:17px}
+    .tags span{font-size:13.5px;padding:7px 13px}
+    .contact{padding:88px 72px}
+    .contact h2{font-size:clamp(42px,3.6vw,56px)}
+    .contact p{font-size:18.5px;max-width:760px}
+    .contact .email{font-size:30px}
+    .contact .loc{font-size:15px}
+    .contact-links a{font-size:14.5px}
+    footer{padding:40px 0;font-size:14px}
   }
   .lang-toggle{background:none;border:1px solid var(--line-strong);color:var(--ink-soft);border-radius:8px;padding:5px 12px;font-size:13px;line-height:1;cursor:pointer;font-family:inherit;transition:border-color .2s,color .2s}
   .lang-toggle:hover{border-color:var(--gold);color:var(--gold)}
