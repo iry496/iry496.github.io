@@ -4,20 +4,20 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="9_g6_wscF8kdickCDfFcws7nDFXEReOk-1dGX9PWQnQ" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Iris Yang — Founder &amp; CEO of Traustia, Doctor of Technology candidate at Purdue University, and quantitative researcher studying how much confidence a result deserves." />
+<meta name="description" content="Iris Yang — Founder &amp; CEO of Traustia and Purdue D.Tech. candidate working across biomedical evidence validation, trustworthy AI, and research mentorship." />
 <meta name="author" content="Iris Yang" />
 <meta name="theme-color" content="#0a0e1a" />
 <title>Iris Yang — Founder &amp; CEO, Traustia · Doctoral Researcher, Purdue</title>
 <link rel="canonical" href="https://iry496.github.io/" />
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="Iris Yang — Founder &amp; CEO, Traustia · Doctoral Researcher, Purdue" />
-<meta property="og:description" content="Founder of Traustia and doctoral researcher studying the reliability, limits, and responsible interpretation of quantitative results." />
+<meta property="og:description" content="Founder of Traustia and doctoral researcher working across biomedical evidence validation, trustworthy AI, and research mentorship." />
 <meta property="og:url" content="https://iry496.github.io/" />
 <meta property="profile:first_name" content="Iris" />
 <meta property="profile:last_name" content="Yang" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Iris Yang — Founder &amp; CEO, Traustia · Doctoral Researcher, Purdue" />
-<meta name="twitter:description" content="Founder of Traustia and doctoral researcher studying the reliability, limits, and responsible interpretation of quantitative results." />
+<meta name="twitter:description" content="Founder of Traustia and doctoral researcher working across biomedical evidence validation, trustworthy AI, and research mentorship." />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,7 +48,8 @@
   ],
   "sameAs": [
     "https://www.linkedin.com/in/irisyyang",
-    "https://github.com/iry496"
+    "https://github.com/iry496",
+    "https://traustia.com/iris/"
   ]
 }
 </script>
@@ -208,6 +209,46 @@
   .feature-card .fc-title{font-size:15px;color:var(--ink);font-weight:600;margin:8px 0 10px;line-height:1.35}
   .feature-card .fc-link{font-size:13px;color:var(--accent)}
 
+  /* RECENT HIGHLIGHTS */
+  .highlights-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .highlight-card{
+    position:relative;overflow:hidden;min-height:390px;padding:32px;
+    border:1px solid var(--line-strong);border-radius:20px;
+    background:
+      radial-gradient(520px 260px at 100% 0,rgba(217,178,106,.13),transparent 64%),
+      linear-gradient(155deg,var(--panel),var(--panel-2));
+    display:flex;flex-direction:column;transition:transform .2s,border-color .2s
+  }
+  .highlight-card:nth-child(2){
+    background:
+      radial-gradient(520px 260px at 100% 0,rgba(122,148,210,.12),transparent 64%),
+      linear-gradient(155deg,var(--panel),var(--panel-2))
+  }
+  .highlight-card::after{content:"";position:absolute;left:32px;right:32px;top:0;height:2px;
+    background:linear-gradient(90deg,var(--gold),transparent)}
+  .highlight-card:hover{transform:translateY(-4px);border-color:rgba(217,178,106,.38)}
+  .highlight-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+  .highlight-kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .highlight-status{flex:none;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);
+    border:1px solid var(--line-strong);border-radius:999px;padding:5px 10px;background:rgba(255,255,255,.025)}
+  .highlight-card h3{font-family:"Fraunces",serif;font-size:clamp(25px,3vw,34px);line-height:1.1;font-weight:600;
+    letter-spacing:-.01em;margin-bottom:18px}
+  .highlight-card .study-title{color:var(--ink);font-size:15px;line-height:1.55;margin-bottom:13px}
+  .highlight-card .summary{color:var(--ink-soft);font-size:14px;margin-bottom:26px}
+  .event-link{align-self:flex-start;color:var(--gold);font-size:12.5px;border-bottom:1px solid rgba(217,178,106,.35);
+    margin:-8px 0 24px;transition:color .2s,border-color .2s}
+  .event-link:hover{color:#efd39b;border-color:#efd39b}
+  .highlight-meta{margin-top:auto;padding-top:20px;border-top:1px solid var(--line);display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .highlight-meta span{display:block;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:4px}
+  .highlight-meta strong{display:block;color:var(--ink);font-size:13px;font-weight:500}
+  @media(max-width:860px){
+    .highlights-grid{grid-template-columns:1fr}
+    .highlight-card{min-height:auto;padding:26px}
+    .highlight-card::after{left:26px;right:26px}
+    .highlight-top{margin-bottom:34px}
+  }
+
   /* SCENE BAND */
   .scenes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .scene{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
@@ -285,6 +326,9 @@
   .contact p{color:var(--ink-soft);max-width:560px;margin:0 auto 26px}
   .contact .email{font-family:"Fraunces",serif;font-size:22px;color:var(--gold);margin-bottom:8px}
   .contact .loc{color:var(--ink-dim);font-size:14px}
+  .contact-links{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:22px}
+  .contact-links a{font-size:13px;color:var(--ink-soft);border-bottom:1px solid var(--line-strong);padding-bottom:2px}
+  .contact-links a:hover{color:var(--gold);border-color:var(--gold)}
 
   footer{padding:34px 0;text-align:center;color:var(--ink-dim);font-size:13px;border-top:1px solid var(--line)}
 
@@ -300,7 +344,7 @@
   .inline-link{color:var(--accent);border-bottom:1px solid rgba(217,178,106,.4);transition:color .2s,border-color .2s}
   .inline-link:hover{color:var(--gold);border-color:var(--gold)}
   .inline-link strong{color:inherit;font-weight:600}
-  .commercial-referral{margin-top:18px;color:var(--ink-soft)}
+  .contact .commercial-referral{margin-top:18px;color:var(--ink-soft)}
   .repos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .repo{display:block;border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:linear-gradient(165deg,var(--panel),var(--panel-2));transition:transform .2s,border-color .2s}
   .repo:hover{transform:translateY(-4px);border-color:var(--gold)}
@@ -325,12 +369,11 @@
     <a href="#top" class="brand" data-zh='張<span>雅軒</span>'>Iris <span>Yang</span></a>
     <nav class="nav-links" id="nav">
       <a href="#about" data-zh='關於'>About</a>
+      <a href="#highlights" data-zh='近期成果'>Highlights</a>
       <a href="#research" data-zh='研究'>Research</a>
       <a href="#education" data-zh='學歷'>Education</a>
       <a href="#teaching" data-zh='教學'>Teaching</a>
       <a href="#publications" data-zh='研究與著作'>Publications</a>
-      <a href="#code" data-zh='程式庫'>Code</a>
-      <a href="#skills" data-zh='專長'>Skills</a>
       <a href="#contact" data-zh='聯絡'>Contact</a>
     </nav>
     <button class="lang-toggle" id="langToggle" aria-label="Language">中文</button>
@@ -358,7 +401,7 @@
         <span class="chip" data-zh='資安風險'>Cybersecurity Risk</span>
       </div>
       <div class="cta">
-        <a href="#research" class="btn btn-primary" data-zh='探索研究'>Explore Research</a>
+        <a href="#highlights" class="btn btn-primary" data-zh='查看近期成果'>Recent Highlights</a>
         <a href="https://traustia.com/iris/" target="_blank" rel="noopener" class="btn btn-ghost" data-zh='電子名片'>Digital Card</a>
         <a href="https://www.linkedin.com/in/irisyyang" target="_blank" rel="me noopener" class="btn btn-ghost">LinkedIn</a>
         <a href="#" data-traustia-link target="_blank" rel="noopener" class="btn btn-ghost" data-zh='前往 Traustia'>Visit Traustia</a>
@@ -395,6 +438,47 @@
           <div class="fc-link" data-zh='查看代表團 →'>View the delegation →</div>
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENT HIGHLIGHTS -->
+<section id="highlights">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow" data-zh='2026 近期成果'>Recent · 2026</div>
+      <h2 class="serif" data-zh='從指導到<em>國際發表。</em>'>From mentorship to <em>international forums.</em></h2>
+      <p data-zh='近期，我帶領與共同指導的兩組青年研究團隊，將可重現性、證據稽核與生醫資料科學帶進國際研究場域。'>Two student research teams I led and co-advised are bringing reproducibility, evidence auditing, and biomedical data science into international research forums.</p>
+    </div>
+    <div class="highlights-grid">
+      <article class="highlight-card reveal">
+        <div class="highlight-top">
+          <span class="highlight-kicker">NCI · 2026</span>
+          <span class="highlight-status" data-zh='海報錄取 · 差旅獎助'>Poster accepted · Travel award</span>
+        </div>
+        <h3 data-zh='讓共享癌症資料成為可稽核的證據。'>Turning shared cancer data into auditable evidence.</h3>
+        <p class="study-title">From Shared Cancer Data to Auditable Evidence: A FAIR Audit of Breast-Cancer pCR Prediction</p>
+        <p class="summary" data-zh='帶領學生團隊檢視共享乳癌資料是否能支持透明、可重現的 pCR 預測。研究獲美國國家癌症研究所資料共享辦公室第四屆 Data Sharing Symposium 錄取，並獲差旅獎助。'>I led a student team auditing whether shared breast-cancer data can support transparent, reproducible pCR prediction. The work was accepted by the NCI Office of Data Sharing's Fourth Annual Data Sharing Symposium and received a travel award.</p>
+        <a class="event-link" href="https://datacommons.cancer.gov/news/fourth-annual-data-sharing-symposium-data-discovery-leveraging-cancer-data-real-world-november" target="_blank" rel="noopener" data-zh='查看 NCI 活動資訊 ↗'>View the NCI event ↗</a>
+        <div class="highlight-meta">
+          <div><span data-zh='角色'>Role</span><strong data-zh='研究主持與指導'>Research lead &amp; advisor</strong></div>
+          <div><span data-zh='活動日期'>Forum date</span><strong data-zh='2026 年 11 月 5–6 日'>November 5–6, 2026</strong></div>
+        </div>
+      </article>
+      <article class="highlight-card reveal">
+        <div class="highlight-top">
+          <span class="highlight-kicker">IEEE MIT URTC · 2026</span>
+          <span class="highlight-status" data-zh='論文錄取發表'>Conference paper accepted</span>
+        </div>
+        <h3 data-zh='在技術成熟度主張之前，先畫出證據邊界。'>Mapping the evidence before claiming readiness.</h3>
+        <p class="study-title">Evidence Mapping of OPM-MEG and SQUID-MEG Readiness for Mild Traumatic Brain Injury</p>
+        <p class="summary" data-zh='共同指導青年研究團隊，以證據圖譜比較 OPM-MEG 與 SQUID-MEG 在輕度創傷性腦損傷研究中的整備度；論文獲 2026 IEEE MIT Undergraduate Research Technology Conference 錄取發表。'>I co-advised a student research team comparing OPM-MEG and SQUID-MEG readiness for mild traumatic brain injury through evidence mapping. The paper was accepted for presentation at the 2026 IEEE MIT Undergraduate Research Technology Conference.</p>
+        <a class="event-link" href="https://urtc.mit.edu/" target="_blank" rel="noopener" data-zh='查看 MIT URTC 活動資訊 ↗'>View the MIT URTC event ↗</a>
+        <div class="highlight-meta">
+          <div><span data-zh='角色'>Role</span><strong data-zh='共同研究指導'>Research co-advisor</strong></div>
+          <div><span data-zh='活動日期'>Forum date</span><strong data-zh='2026 年 10 月 9–11 日'>October 9–11, 2026</strong></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -737,6 +821,10 @@
       <p data-zh='如欲討論論文合作、研究、教學或演講，請透過下方聯絡方式與我聯繫。'>For paper collaborations, research, teaching, or speaking, please use the contact address below.</p>
       <div class="email"><a href="mailto:irisyang@traustia.com">irisyang@traustia.com</a></div>
       <div class="loc" data-zh='美國加州洛杉磯'>Los Angeles, California</div>
+      <div class="contact-links">
+        <a href="https://traustia.com/iris/" target="_blank" rel="me noopener">traustia.com/iris ↗</a>
+        <a href="https://www.linkedin.com/in/irisyyang" target="_blank" rel="me noopener">LinkedIn ↗</a>
+      </div>
       <p class="commercial-referral" data-zh='如需驗證工作或洽詢公司事務，請聯絡 <a class="inline-link" href="#" data-traustia-link target="_blank" rel="noopener">Traustia</a>。'>For validation work and company enquiries, please contact <a class="inline-link" href="#" data-traustia-link target="_blank" rel="noopener">Traustia</a>.</p>
     </div>
   </div>
