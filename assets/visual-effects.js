@@ -85,6 +85,37 @@
       });
     }
 
+    // Ambient decorations share a pause control. CSS is static unless this
+    // enhancement runs; hidden tabs and offscreen artwork use no running loops.
+    const motionButton = document.getElementById("motionToggle");
+    const ambientElements = Array.from(document.querySelectorAll("[data-ambient-motion]"));
+    let motionPaused = false;
+    try { motionPaused = window.localStorage.getItem("site_motion") === "paused"; } catch { /* Storage is optional. */ }
+    function updateAmbientState() {
+      document.documentElement.classList.toggle("motion-paused", motionPaused);
+      document.documentElement.classList.toggle("motion-document-hidden", document.hidden);
+      if (motionButton) motionButton.dataset.paused = String(motionPaused);
+    }
+    if (motionButton) {
+      motionButton.hidden = false;
+      motionButton.addEventListener("click", () => {
+        motionPaused = !motionPaused;
+        updateAmbientState();
+        try { window.localStorage.setItem("site_motion", motionPaused ? "paused" : "running"); } catch { /* Storage is optional. */ }
+      });
+    }
+    updateAmbientState();
+    document.documentElement.classList.add("motion-ready");
+    if ("IntersectionObserver" in window) {
+      const ambientObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => entry.target.classList.toggle("motion-visible", entry.isIntersecting));
+      });
+      ambientElements.forEach((element) => ambientObserver.observe(element));
+    } else {
+      ambientElements.forEach((element) => element.classList.add("motion-visible"));
+    }
+    document.addEventListener("visibilitychange", updateAmbientState);
+
     window.addEventListener("scroll", scheduleUpdate, { passive: true });
     window.addEventListener("resize", scheduleUpdate, { passive: true });
     window.addEventListener("load", scheduleUpdate, { once: true });

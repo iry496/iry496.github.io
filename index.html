@@ -81,7 +81,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet"/>
 <link href="assets/styles.css" rel="stylesheet"/>
 <script defer="" src="assets/script.js"></script>
-<link href="assets/visual-refresh.css" rel="stylesheet"/><script defer="" src="assets/visual-effects.js"></script><link href="assets/academic-profile.css" rel="stylesheet"/><link href="assets/event-details.css" rel="stylesheet"/></head>
+<link href="assets/visual-refresh.css" rel="stylesheet"/><script defer="" src="assets/visual-effects.js"></script><link href="assets/academic-profile.css" rel="stylesheet"/><link href="assets/event-details.css" rel="stylesheet"/><link href="assets/desktop-readability.css" rel="stylesheet"/></head>
 <body>
 <a class="skip-link" href="#main"><span data-zh="跳至主要內容">Skip to content</span></a>
 <header class="site-header">
@@ -94,6 +94,24 @@
 </div>
 <div aria-hidden="true" class="reading-track"><span id="readingProgress"></span></div></header>
 <main id="main">
+<div class="flight-band" data-ambient-motion="" id="pacific-flight">
+<div class="wrap">
+<div class="flight-band-heading">
+<a class="flight-story" href="#ucla-program"><span data-zh="跨越太平洋的科研交流">RESEARCH ACROSS THE PACIFIC</span><span aria-hidden="true"> ↗</span></a>
+<button class="motion-toggle" id="motionToggle" type="button" hidden="" data-paused="false"><span class="motion-pause-label"><span aria-hidden="true">Ⅱ </span><span data-zh="暫停動態">Pause motion</span></span><span class="motion-play-label"><span aria-hidden="true">▷ </span><span data-zh="繼續動態">Resume motion</span></span></button>
+<span class="motion-reduced-note" data-zh="動態已減少">Reduced motion</span>
+</div>
+<div class="flight-band-route">
+<span class="flight-place"><span class="flight-place-dot" aria-hidden="true"></span><span data-zh="臺灣">Taiwan</span></span>
+<div class="flight-track" aria-hidden="true">
+<svg class="flight-path" viewBox="0 0 1000 64" preserveAspectRatio="none" focusable="false"><path d="M0 42 Q500 -6 1000 42" vector-effect="non-scaling-stroke"/></svg>
+<span class="flight-plane"><svg viewBox="-16 -16 32 32" focusable="false"><path d="M12 0 3 3-3 12-6 12-3 3-9 2-12 6-14 6-12 0-14-6-12-6-9-2-3-3-6-12-3-12 3-3Z"/></svg></span>
+</div>
+<span class="flight-place flight-place-arrival"><span class="flight-place-dot" aria-hidden="true"></span><span data-zh="洛杉磯">Los Angeles</span></span>
+</div>
+</div>
+</div>
+
 <section aria-labelledby="hero-title" class="hero" id="home"><img alt="" class="hero-atmosphere" decoding="async" height="600" src="assets/research-network-banner.jpg" width="1600"/>
 <div class="wrap hero-grid">
 <div class="hero-copy">
@@ -104,7 +122,7 @@
 <div aria-label="Research interests" class="research-pills"><a href="#research"><span data-zh="可信任機器學習">Trustworthy ML</span></a><a href="#research"><span data-zh="生醫證據">Biomedical evidence</span></a><a href="#research"><span data-zh="風險與決策">Risk &amp; decisions</span></a></div><div class="hero-footnote"><span aria-hidden="true" class="small-dot"></span><span data-zh="現居洛杉磯 · 連結跨領域研究">Based in Los Angeles · Working across disciplines</span></div>
 </div>
 <figure class="hero-portrait">
-<span class="research-constellation reveal-on-scroll" aria-hidden="true">
+<span class="research-constellation" data-ambient-motion="" aria-hidden="true">
   <svg viewBox="0 0 150 150" focusable="false">
     <circle class="constellation-ring" cx="66" cy="68" r="46"/>
     <g class="constellation-links">
@@ -157,7 +175,7 @@
 <a href="https://taiwan-ucla-medquantum.github.io/journal.html"><span data-zh="閱讀計畫紀錄 ↗">Read the program journal ↗</span></a>
 </div>
 </div>
-<div class="event-program-art">
+<div class="event-program-art" data-ambient-motion="">
 <svg class="journey-graphic" viewBox="0 0 320 150" aria-hidden="true" focusable="false">
   <g class="journey-globe">
     <circle cx="160" cy="77" r="65"/>
