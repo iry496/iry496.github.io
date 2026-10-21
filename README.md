@@ -13,11 +13,12 @@ Run `python3 -m http.server 8765 --bind 127.0.0.1` in this directory and open `h
 - `assets/script.js` handles language preference, mobile navigation, publication filters, and academic-detail deep links.
 - `assets/iris-yang.jpg` is the original portrait, shown in the header, hero, and biography. The seven original research and campus images are restored as separate files, without image modification.
 - `assets/visual-refresh.css` restores the navy/gold visual identity, responsive image cards, and hover/entrance effects.
-- `assets/visual-effects.js` progressively enhances reading progress, active navigation, and one-time entrance motion; it respects reduced-motion preferences.
+- `assets/visual-effects.js` progressively enhances reading progress, active navigation, and entrance motion. It also controls ambient decorations: visitors can pause/resume them, the choice is saved locally, and offscreen artwork / hidden tabs pause automatically. Reduced-motion preferences always take priority.
 - `assets/academic-profile.css` styles education credentials, teaching roles, research citations, and additional portfolio entries.
-- `assets/event-details.css` styles the Taiwan–UCLA program feature and original SVG constellation / flight motifs. Existing reveal observation triggers each animation once (under four seconds); reduced-motion and no-JavaScript views show static artwork. No animation libraries or third-party artwork are added.
+- `assets/event-details.css` styles the Taiwan–UCLA program feature, the wide flight rail below navigation, and original SVG constellation / flight motifs. Slow ambient loops run only with JavaScript and no reduced-motion preference; default and reduced-motion views show static artwork. No animation libraries or third-party artwork are added.
+- `assets/desktop-readability.css` enlarges navigation, body copy, citations, and academic details above 860px while keeping the established mobile type scale.
 
-The page remains readable with JavaScript disabled. With JavaScript enabled, language choice is saved locally in the browser (`site_lang`); no analytics or submission backend is added.
+The page remains readable with JavaScript disabled. With JavaScript enabled, language and motion choices are saved locally in the browser (`site_lang`, `site_motion`); no analytics or submission backend is added.
 
 ## Content notes
 

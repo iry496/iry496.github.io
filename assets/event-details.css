@@ -1,5 +1,5 @@
-/* Original research and journey motifs. Motion is finite and optional;
-   the complete artwork is the default without JavaScript. */
+/* Original research and journey motifs. Complete static artwork is the
+   default; optional gentle loops are managed by the shared motion controls. */
 .research-constellation {
   position: absolute;
   z-index: 2;
@@ -56,25 +56,69 @@
 .journey-labels span:last-child { text-align: right; }
 .journey-caption { margin: 17px 0 0; padding-top: 13px; border-top: 1px solid #d9c7a8; color: #80602e; font-size: 10px; letter-spacing: .11em; text-align: center; }
 
+/* Flight rail spans the page below navigation; the plane stays legible at
+   every viewport width instead of shrinking with the route artwork. */
+.flight-band {
+  background-color: #fbf8f0;
+  background-image: linear-gradient(#bda57c0b 1px, transparent 1px), linear-gradient(90deg, #bda57c0b 1px, transparent 1px);
+  background-size: 56px 56px;
+  border-bottom: 1px solid #d8c9af;
+  padding: 15px 0 7px;
+}
+.flight-band-heading { display: flex; justify-content: space-between; align-items: center; gap: 15px; min-height: 34px; }
+.flight-story { color: #7a5c32; font-size: 11px; letter-spacing: .14em; }
+.flight-story:hover { color: #243b59; }
+.motion-toggle { border: 1px solid #d4c5ab; border-radius: 22px; padding: 5px 12px; background: #fffdf6; color: #4b5a6c; font-size: 12px; min-height: 34px; white-space: nowrap; }
+.motion-toggle:hover { background: #f2e8d5; }
+.motion-toggle .motion-play-label,
+.motion-toggle[data-paused="true"] .motion-pause-label { display: none; }
+.motion-toggle[data-paused="true"] .motion-play-label { display: inline; }
+.motion-reduced-note { display: none; font-size: 11px; color: #586879; }
+.flight-band-route { display: flex; align-items: flex-end; gap: 24px; padding-bottom: 8px; }
+.flight-place { display: flex; align-items: center; gap: 8px; color: #3d5069; font-size: 13px; line-height: 24px; white-space: nowrap; padding-bottom: 9px; }
+.flight-place-dot { width: 6px; height: 6px; border-radius: 50%; background: #a27b40; box-shadow: 0 0 0 4px #bda57c1a; }
+.flight-place-arrival .flight-place-dot { background: #506b88; }
+.flight-track { position: relative; flex: 1; height: 64px; min-width: 0; }
+.flight-path { display: block; width: 100%; height: 64px; overflow: visible; }
+.flight-path path { fill: none; stroke: #a18b67; stroke-width: 1.2; stroke-dasharray: 2 7; stroke-linecap: round; }
+.flight-plane { position: absolute; left: 53%; top: 0; width: 28px; height: 28px; margin: -14px 0 0 -14px; transform: translateY(18px); color: #243b59; pointer-events: none; }
+.flight-plane svg { display: block; width: 100%; height: 100%; fill: currentColor; stroke: #fbf8f0; stroke-width: .8; }
+
 @media (prefers-reduced-motion: no-preference) {
-  .research-constellation.is-in-view .constellation-links path { animation: iris-constellation-trace 2.7s ease-out backwards; }
-  .research-constellation.is-in-view .constellation-point { animation: iris-constellation-light 2.8s ease-in-out backwards; }
-  .research-constellation.is-in-view .constellation-point:nth-child(3n) { animation-delay: .18s; }
-  .research-constellation.is-in-view .constellation-point:nth-child(3n + 1) { animation-delay: .36s; }
-  .event-program.is-in-view .journey-plane { animation: iris-program-flight 2.8s linear .2s backwards; }
+  .motion-ready .flight-plane { animation: iris-pacific-flight 24s linear -2s infinite; animation-play-state: paused; }
+  .motion-ready .research-constellation svg { animation: iris-constellation-drift 10s ease-in-out infinite; animation-play-state: paused; }
+  .motion-ready .constellation-point { animation: iris-node-glow 7s ease-in-out infinite; animation-play-state: paused; }
+  .motion-ready .constellation-point:nth-child(3n) { animation-delay: -2s; }
+  .motion-ready .constellation-point:nth-child(3n + 1) { animation-delay: -4s; }
+  .motion-ready .event-program-art .journey-plane { animation: iris-program-flight 18s linear -1.5s infinite; animation-play-state: paused; }
+  .motion-ready .motion-visible .flight-plane,
+  .motion-ready .motion-visible.research-constellation svg,
+  .motion-ready .motion-visible .constellation-point,
+  .motion-ready .motion-visible .journey-plane { animation-play-state: running; }
+  .motion-ready.motion-paused [data-ambient-motion] *,
+  .motion-ready.motion-document-hidden [data-ambient-motion] * { animation-play-state: paused!important; }
 }
-@keyframes iris-constellation-trace {
-  from { stroke-dasharray: 1; stroke-dashoffset: 1; opacity: .2; }
-  to { stroke-dasharray: 1; stroke-dashoffset: 0; opacity: 1; }
+@keyframes iris-constellation-drift {
+  0%,100% { transform: translate(0, 0) rotate(-2deg); }
+  50% { transform: translate(3px, -4px) rotate(2deg); }
 }
-@keyframes iris-constellation-light {
-  0% { opacity: .45; }
-  40% { opacity: 1; }
-  70% { opacity: .7; }
-  100% { opacity: 1; }
+@keyframes iris-node-glow { 0%,100% { opacity: .6; } 50% { opacity: 1; } }
+@keyframes iris-pacific-flight {
+  0% { left: 0%; transform: translateY(42px) rotate(-6deg); opacity: 0; }
+  4% { opacity: 1; }
+  12.5% { left: 12.5%; transform: translateY(31.5px) rotate(-4.5deg); }
+  25% { left: 25%; transform: translateY(24px) rotate(-3deg); }
+  37.5% { left: 37.5%; transform: translateY(19.5px) rotate(-1.5deg); }
+  50% { left: 50%; transform: translateY(18px) rotate(0deg); }
+  62.5% { left: 62.5%; transform: translateY(19.5px) rotate(1.5deg); }
+  75% { left: 75%; transform: translateY(24px) rotate(3deg); }
+  87.5% { left: 87.5%; transform: translateY(31.5px) rotate(4.5deg); }
+  96% { opacity: 1; }
+  100% { left: 100%; transform: translateY(42px) rotate(6deg); opacity: 0; }
 }
 @keyframes iris-program-flight {
-  0% { transform: translate(44px, 105px) rotate(-49deg); }
+  0% { transform: translate(44px, 105px) rotate(-49deg); opacity: 0; }
+  4%,96% { opacity: 1; }
   12.5% { transform: translate(73px, 75.46875px) rotate(-41deg); }
   25% { transform: translate(102px, 54.375px) rotate(-30deg); }
   37.5% { transform: translate(131px, 41.71875px) rotate(-16deg); }
@@ -82,7 +126,7 @@
   62.5% { transform: translate(189px, 41.71875px) rotate(16deg); }
   75% { transform: translate(218px, 54.375px) rotate(30deg); }
   87.5% { transform: translate(247px, 75.46875px) rotate(41deg); }
-  100% { transform: translate(276px, 105px) rotate(49deg); }
+  100% { transform: translate(276px, 105px) rotate(49deg); opacity: 0; }
 }
 @media (max-width: 1100px) {
   .research-constellation { width: 125px; left: -48px; top: 3px; }
@@ -96,6 +140,15 @@
   .research-constellation { width: 108px; left: -25px; }
 }
 @media (max-width: 600px) {
+  .flight-band { padding-top: 9px; }
+  .flight-band-heading { gap: 8px; }
+  .flight-story { font-size: 8px; letter-spacing: .06em; max-width: 55%; }
+  .motion-toggle { font-size: 10px; min-height: 34px; padding: 4px 9px; }
+  .motion-reduced-note { font-size: 9px; }
+  .flight-band-route { gap: 13px; }
+  .flight-place { font-size: 10px; gap: 6px; }
+  .flight-plane { width: 25px; height: 25px; margin-left: -12.5px; margin-top: -12.5px; }
+
   .research-constellation { width: 90px; left: -30px; top: 2px; }
   .event-program { margin-top: 32px; padding: 24px 22px; }
   .event-program h3 { font-size: 27px; }
@@ -107,10 +160,12 @@
   .journey-caption { font-size: 9px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .research-constellation,.research-constellation *,.event-program,.event-program * { animation: none!important; transition: none!important; }
+  .motion-toggle { display: none; }
+  .motion-reduced-note { display: inline; }
+  .flight-band *,.research-constellation,.research-constellation *,.event-program,.event-program * { animation: none!important; transition: none!important; }
 }
 @media print {
-  .research-constellation { display: none; }
+  .flight-band,.research-constellation { display: none; }
   .event-program { background: white; box-shadow: none; break-inside: avoid; }
   .event-program,.event-program * { animation: none!important; }
 }

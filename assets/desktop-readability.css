@@ -1,0 +1,131 @@
+/* Keep the established mobile scale; give desktop reading more breathing room. */
+@media (min-width: 861px) {
+  .nav-shell nav { font-size: 14px; }
+  .language-button { font-size: 13px; }
+  .name-zh { font-size: 12px; }
+
+  .hero-description { font-size: 18px; line-height: 1.8; }
+  .intro-copy { font-size: 17px; line-height: 1.8; }
+  .about-copy .large-copy { font-size: 20px; line-height: 1.75; }
+
+  .mentoring-path p:not(.eyebrow),
+  .process-grid p,
+  .highlight-card p,
+  .research-topic p,
+  .project-card>p,
+  .pub .meta,
+  .about-copy p,
+  .t-item .org,
+  .t-item .desc,
+  .about-grid p,
+  .program-experience p,
+  .program-experience .program-name,
+  .portfolio-item>p,
+  .teaching-history .teaching-history-school,
+  .teaching-history .teaching-achievement,
+  .event-program-copy>p:not(.eyebrow),
+  .contact-section p:not(.eyebrow) {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .small-copy,
+  .mentoring-principle,
+  .research-contribution,
+  .department-line,
+  .institution-degree {
+    font-size: 15px;
+  }
+  .detail-lead { font-size: 18px; }
+  .mentoring-path .path-note { font-size: 14px!important; }
+  .contact-action p { font-size: 14px!important; }
+
+  .button,
+  .hero-actions .button,
+  .hero-actions .text-link,
+  .text-link,
+  .process-grid h4,
+  .skill-col h3 {
+    font-size: 16px;
+  }
+  .mentorship-bottom .text-link,
+  .project-heading .text-link,
+  .about-links .text-link,
+  .program-experience .text-link,
+  .event-program-links a,
+  .publication-filters button,
+  .profile-jump-links a,
+  .contact-socials {
+    font-size: 14px;
+  }
+
+  .eyebrow,
+  .mentoring-path>.eyebrow,
+  .credential-grid .institution-copy .eyebrow,
+  .company-link-card .eyebrow,
+  .teaching-history .eyebrow,
+  .contact-section .eyebrow,
+  .event-program-copy>.eyebrow {
+    font-size: 12px;
+  }
+  .identity-chip,
+  .research-pills,
+  .hero-footnote,
+  .portrait-role,
+  .portrait-name span,
+  .portrait-seal>span>span,
+  .about-portrait figcaption>span,
+  .about-portrait figcaption strong span,
+  .company-link-card>span:nth-child(2)>span:last-child,
+  .process-heading p,
+  .step-number,
+  .section-index,
+  .research-topic .topic-number,
+  .project-links,
+  .research-note,
+  .record-updated,
+  .pub .yr,
+  .t-item .yr,
+  .program-year,
+  .portfolio-item .portfolio-stage,
+  .tags span,
+  .footer-inner p,
+  .footer-inner>a:last-child {
+    font-size: 13px;
+  }
+  .event-wordmark span,
+  .status-pill,
+  .project-top .eyebrow,
+  .project-card .project-status,
+  .t-item .badge {
+    font-size: 12px;
+  }
+  .event-meta,
+  .pub .venue,
+  .group-label,
+  .citation-link,
+  .credential-note,
+  .education-recognition,
+  .event-program-copy>p.event-program-meta,
+  .journey-labels {
+    font-size: 14px;
+  }
+  .journey-caption { font-size: 12px; }
+
+  .pub h3 { font-size: 23px; }
+  .zh .pub h3 { font-size: 22px; }
+  .research-topic h3 { font-size: 25px; }
+  .portfolio-item h3 { font-size: 24px; }
+  .t-item h3 { font-size: 24px; }
+
+  /* Long labels and citation URLs can wrap without stretching their cards. */
+  .research-topic-copy,
+  .project-card,
+  .pub .body,
+  .t-item,
+  .portfolio-item {
+    min-width: 0;
+  }
+  .project-links { flex-wrap: wrap; }
+  .tags span { overflow-wrap: anywhere; }
+}
