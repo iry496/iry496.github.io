@@ -9,7 +9,7 @@
     const publicationItems = Array.from(document.querySelectorAll("[data-category]"));
     const publicationCount = document.getElementById("publicationCount");
     const publicationEntries = Array.from(document.querySelectorAll("#publications .pub"));
-    const allowedFilters = new Set(["all", "published", "review", "projects"]);
+    const allowedFilters = new Set(["all", "published", "review", "projects", "presentations"]);
     let language = "en";
     let menuOpen = false;
     let activeFilter = "all";
@@ -150,6 +150,11 @@
       }
       const target = document.getElementById(id);
       if (!target) return;
+      const publicationGroup = target.closest(".publication-group");
+      if (publicationGroup?.hidden) {
+        setFilter("all");
+        window.requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
+      }
       let details = target.closest("details");
       if (!details) return;
       while (details) {
@@ -160,7 +165,13 @@
       window.requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
     }
 
+    document.querySelectorAll('a[href="#presentations"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        if (document.getElementById("presentations")?.hidden) setFilter("all");
+      });
+    });
     openLinkedDetails();
+    window.addEventListener("load", openLinkedDetails, { once: true });
     window.addEventListener("hashchange", openLinkedDetails);
   }
 
