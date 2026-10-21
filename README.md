@@ -15,6 +15,7 @@ Run `python3 -m http.server 8765 --bind 127.0.0.1` in this directory and open `h
 - `assets/visual-refresh.css` restores the navy/gold visual identity, responsive image cards, and hover/entrance effects.
 - `assets/visual-effects.js` progressively enhances reading progress, active navigation, and one-time entrance motion; it respects reduced-motion preferences.
 - `assets/academic-profile.css` styles education credentials, teaching roles, research citations, and additional portfolio entries.
+- `assets/event-details.css` styles the Taiwan–UCLA program feature and original SVG constellation / flight motifs. Existing reveal observation triggers each animation once (under four seconds); reduced-motion and no-JavaScript views show static artwork. No animation libraries or third-party artwork are added.
 
 The page remains readable with JavaScript disabled. With JavaScript enabled, language choice is saved locally in the browser (`site_lang`); no analytics or submission backend is added.
 
@@ -25,6 +26,8 @@ Academic content was reconciled with author-supplied CVs and direct author corre
 The research record has separate filters for publications, submitted/revised manuscripts, projects, and presentations. The NCI and Sikand events are upcoming as of October 21, 2026. Conference acceptance is not proof of proceedings publication. Public project archives and datasets are labeled separately from journal articles. Portfolio proposals and early-stage projects retain their actual stage; the clinical cohort pilot uses synthetic data and is described without a private repository link.
 
 Published article citations were checked against their publisher records. Course titles were checked against Cal State LA's Fall 2026 schedule. Update both languages and the visible record date when a manuscript status, event, credential, or teaching role changes.
+
+The Taiwan–UCLA summer program feature links to the activity homepage and journal. Its July 6–September 3, 2026 dates describe a past program; retain the specific Academic Advisor & Course Coordinator role rather than implying a UCLA faculty appointment.
 
 Mentoring inquiries go directly to the personal email already published on the author's GitHub profile. The Traustia affiliation remains in the biography.
 

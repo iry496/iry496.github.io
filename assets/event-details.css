@@ -1,0 +1,116 @@
+/* Original research and journey motifs. Motion is finite and optional;
+   the complete artwork is the default without JavaScript. */
+.research-constellation {
+  position: absolute;
+  z-index: 2;
+  width: 150px;
+  left: -62px;
+  top: 8px;
+  pointer-events: none;
+}
+.research-constellation svg { display: block; width: 100%; height: auto; overflow: visible; }
+.constellation-links { fill: none; stroke: #9b865f; stroke-width: 1; opacity: .55; }
+.constellation-ring { fill: #fbf6eb; fill-opacity: .6; stroke: #b89b6d; stroke-width: 1; }
+.constellation-point { fill: #385571; stroke: #fcfaf4; stroke-width: 1.8; }
+.constellation-point--gold { fill: #a77c3e; }
+.constellation-halo { fill: none; stroke: #ba9a65; stroke-width: 1; opacity: .55; }
+
+.event-program {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(245px, .85fr);
+  gap: 40px;
+  align-items: center;
+  margin-top: 42px;
+  padding: 34px 38px;
+  border: 1px solid #d6c6aa;
+  border-radius: 16px;
+  background: linear-gradient(115deg, #fffcf5 0%, #f3eadb 100%);
+  box-shadow: 0 8px 28px #5b472812;
+}
+.event-program-copy { min-width: 0; }
+.event-program-copy>.eyebrow { font-size: 9px; color: #80602e; margin: 0 0 12px; }
+.event-program h3 { font-family: var(--serif); font-size: clamp(25px, 2.7vw, 34px); font-weight: 500; line-height: 1.22; margin: 0 0 15px; }
+.event-program-copy>p:not(.eyebrow) { color: #4b5a6c; font-size: 13px; line-height: 1.8; margin: 0 0 14px; }
+.event-program-copy>p.event-program-meta { color: #72552d; font-size: 11px; }
+.event-program-links { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; margin-top: 21px; }
+.event-program-links a { color: #253d58; font-size: 12px; line-height: 1.6; padding-block: 6px; text-decoration: underline; text-decoration-color: #bda37c; text-underline-offset: 5px; }
+.event-program-links a:hover { color: #80602e; text-decoration-color: currentColor; }
+.event-program-links a:focus-visible { outline: 2px solid #8c652f; outline-offset: 5px; border-radius: 2px; }
+.event-program-art { min-width: 0; padding: 19px 18px 21px; background: #fffaf080; border: 1px solid #d9c7a8; border-radius: 12px; }
+.journey-graphic { display: block; width: 100%; height: auto; pointer-events: none; }
+.journey-globe { fill: none; stroke: #c5b79b; stroke-width: .85; opacity: .43; }
+.journey-route { fill: none; stroke: #9b7947; stroke-width: 1.6; stroke-dasharray: 3 5; stroke-linecap: round; }
+.journey-endpoint-halo { fill: #fcf7eb; stroke: #d8c4a1; stroke-width: 1; }
+.journey-endpoint { fill: #385571; }
+.journey-endpoint--arrival { fill: #a57b3d; }
+.journey-plane {
+  fill: #253d58;
+  stroke: #fffaf0;
+  stroke-width: .7;
+  stroke-linejoin: round;
+  transform-box: view-box;
+  transform-origin: 0 0;
+  transform: translate(276px, 105px) rotate(49deg);
+}
+.journey-labels { display: flex; justify-content: space-between; gap: 15px; margin: -5px 13px 0; color: #586879; font-size: 11px; letter-spacing: .02em; }
+.journey-labels span:last-child { text-align: right; }
+.journey-caption { margin: 17px 0 0; padding-top: 13px; border-top: 1px solid #d9c7a8; color: #80602e; font-size: 10px; letter-spacing: .11em; text-align: center; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .research-constellation.is-in-view .constellation-links path { animation: iris-constellation-trace 2.7s ease-out backwards; }
+  .research-constellation.is-in-view .constellation-point { animation: iris-constellation-light 2.8s ease-in-out backwards; }
+  .research-constellation.is-in-view .constellation-point:nth-child(3n) { animation-delay: .18s; }
+  .research-constellation.is-in-view .constellation-point:nth-child(3n + 1) { animation-delay: .36s; }
+  .event-program.is-in-view .journey-plane { animation: iris-program-flight 2.8s linear .2s backwards; }
+}
+@keyframes iris-constellation-trace {
+  from { stroke-dasharray: 1; stroke-dashoffset: 1; opacity: .2; }
+  to { stroke-dasharray: 1; stroke-dashoffset: 0; opacity: 1; }
+}
+@keyframes iris-constellation-light {
+  0% { opacity: .45; }
+  40% { opacity: 1; }
+  70% { opacity: .7; }
+  100% { opacity: 1; }
+}
+@keyframes iris-program-flight {
+  0% { transform: translate(44px, 105px) rotate(-49deg); }
+  12.5% { transform: translate(73px, 75.46875px) rotate(-41deg); }
+  25% { transform: translate(102px, 54.375px) rotate(-30deg); }
+  37.5% { transform: translate(131px, 41.71875px) rotate(-16deg); }
+  50% { transform: translate(160px, 37.5px) rotate(0deg); }
+  62.5% { transform: translate(189px, 41.71875px) rotate(16deg); }
+  75% { transform: translate(218px, 54.375px) rotate(30deg); }
+  87.5% { transform: translate(247px, 75.46875px) rotate(41deg); }
+  100% { transform: translate(276px, 105px) rotate(49deg); }
+}
+@media (max-width: 1100px) {
+  .research-constellation { width: 125px; left: -48px; top: 3px; }
+  .event-program { grid-template-columns: minmax(0, 1.3fr) minmax(225px, .8fr); gap: 28px; padding: 29px; }
+}
+@media (max-width: 760px) {
+  .event-program { grid-template-columns: minmax(0, 1fr); gap: 22px; padding: 27px; }
+  .event-program-art { width: 100%; max-width: 380px; justify-self: center; padding-top: 12px; }
+}
+@media (min-width: 601px) and (max-width: 860px) {
+  .research-constellation { width: 108px; left: -25px; }
+}
+@media (max-width: 600px) {
+  .research-constellation { width: 90px; left: -30px; top: 2px; }
+  .event-program { margin-top: 32px; padding: 24px 22px; }
+  .event-program h3 { font-size: 27px; }
+  .event-program-copy>p:not(.eyebrow) { font-size: 12px; }
+  .event-program-links { gap: 7px 18px; margin-top: 15px; }
+  .event-program-links a { font-size: 11px; }
+  .event-program-art { padding: 8px 12px 17px; }
+  .journey-labels { font-size: 10px; margin-inline: 6px; }
+  .journey-caption { font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .research-constellation,.research-constellation *,.event-program,.event-program * { animation: none!important; transition: none!important; }
+}
+@media print {
+  .research-constellation { display: none; }
+  .event-program { background: white; box-shadow: none; break-inside: avoid; }
+  .event-program,.event-program * { animation: none!important; }
+}
